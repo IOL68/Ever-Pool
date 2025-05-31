@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "EverBlue Pool S&R LLC | Commercial Pool Construction & Services",
   description: "California's premier commercial pool construction and service specialists. We design, build, renovate, and maintain swimming pools for hotels, resorts, schools, and more.",
   keywords: "commercial pool construction, pool maintenance, California, swimming pool contractor, pool renovation, commercial pool services",
+  icons: {
+    icon: "favicon.ico",
+  },
 };
 
 export default function RootLayout({
