@@ -70,7 +70,7 @@ export default function Navbar() {
                     <div className="flex items-center">
                       <div className="hidden md:block mr-12">
                         <Image
-                          src="/everblue-logo.png"
+                          src="/logo.png"
                           alt="EverBlue Pool Logo"
                           width={90}
                           height={54}
@@ -87,7 +87,7 @@ export default function Navbar() {
                     <div className="flex items-center">
                       <div className="hidden md:block mr-12">
                         <Image
-                          src="/everblue-logo.png"
+                          src="/logo.png"
                           alt="EverBlue Pool Logo"
                           width={90}
                           height={54}

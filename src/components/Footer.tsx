@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="mb-8">
               <Link href="/" className="block transition-transform hover:scale-105">
                 <Image
-                  src="/everblue-logo.png"
+                  src="/logo.png"
                   alt="EverBlue Pool Logo"
                   width={90}
                   height={54}
