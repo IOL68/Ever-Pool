@@ -24,3 +24,208 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Animaciones para el modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.3s ease-in;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-slideOut {
+  animation: slideOut 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom utilities */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari y Opera */
+}
+
+/* Animations */
+@keyframes fade-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutScale {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2) translateY(-30px);
+    filter: blur(8px);
+  }
+}
+
+.animate-fade-scale-in {
+  animation: fade-scale-in 0.3s ease-out forwards;
+}
+
+.animate-fadeout-scale {
+  animation: fadeOutScale 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Mejorar la visualización de los selects */
+select {
+  color: #374151; /* text-gray-700 */
+  font-weight: 500;
+}
+
+select option {
+  color: #374151; /* text-gray-700 */
+  background-color: white;
+  font-weight: normal;
+}
+
+/* Asegurar visualización correcta de dropdowns */
+select {
+  background-color: white;
+  appearance: listbox !important;
+  background-image: none !important;
+}
+
+/* Ensure correct display of select dropdown options */
+select.select-fix {
+  z-index: 30;
+}
+
+/* Make modal select elements display correctly */
+.modal-select-fix {
+  z-index: 100 !important;
+}
+
+/* Enhanced select styling */
+.custom-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230ea5e9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+.custom-select:focus {
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.3);
+}
+
+/* Fix dropdown positioning */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  position: relative;
+  width: 100%;
+}
+
+/* Override browser select dropdown positioning */
+select.custom-select {
+  position: relative !important;
+}
+
+/* Force dropdown menu to appear below the select element */
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  pointer-events: none; /* Ensure clicking goes through to the select */
+  inset: auto 0 auto auto; /* Position at the right side */
+}
+
+/* Style the arrow in the dropdown separately */
+.select-wrapper .arrow-icon {
+  position: absolute;
+  pointer-events: none;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Remove default dropdown display on mobile devices */
+@supports (-webkit-touch-callout: none) {
+  /* iOS-specific styles */
+  select.custom-select {
+    -webkit-appearance: none;
+  }
+}
+
+/* These rules ensure dropdowns appear properly on different browsers */
+@supports (-moz-appearance:none) {
+  /* Firefox-specific styles */
+  select.custom-select {
+    text-indent: 0.01px;
+    text-overflow: '';
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  /* Chrome/Safari-specific styles */
+  select.custom-select {
+    height: auto !important;
+  }
+}
+
+/* Remove focus outline for mouse users */
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
